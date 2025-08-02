@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor Binario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="formConvertidor" onsubmit="return false;">
+        <h1 id="titulo">Convertir decimal a binario</h1>
+        <label for="conversionTipo">De:</label>
+        <select id="conversionTipo" class="inputNumber">
+            <option value="decToBin">Decimal a Binario</option>
+            <option value="binToDec">Binario a Decimal</option>
+        </select>
+    
+    <label id="lblInput" for="inputNumber">Ingrese el número decimal:</label>
+    <input  id="inputNumber" class="inputNumber" type="number" placeholder="Ej:12">
+    <div id="divBTN">
+        <button id="btnConvertir" onclick="calcularValor()">Convertir</button>
+        <button id="btnReset" >Reset</button>
+    </div>
+
+        <label id="lblOutput" for="output">Valor Binario:</label>
+        <input id="output" class="inputNumber" type="text" readonly>
+   </form>
+
+   <script src="script.js"></script>
+</body>
+</html>
