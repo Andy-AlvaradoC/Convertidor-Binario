@@ -1,3 +1,4 @@
+
 let select = document.querySelector("#conversionTipo");
 function calcularValor() {
   if (select.value === "decToBin") {
@@ -6,36 +7,57 @@ function calcularValor() {
     binarioToDecimal();
   }
 }
+function permitirSoloCerosUnos(event){
+    let value = event.target.value;
+    event.target.value = value.replace(/[^01]/g, ''); 
+  
+}
 select.addEventListener("change", function (event) {
+  let input = document.querySelector("#inputNumber")
+  let output = document.querySelector("#output")
   if (event.target.value === "binToDec") {
     document.querySelector("#titulo").textContent =
       "Convertir binario a decimal:";
     document.querySelector("#lblInput").textContent =
       "Ingrese el número binario:";
-    document.querySelector("#inputNumber").placeholder = "Ej:10110";
+      input.value = ''
+      output.value = ''
+    input.placeholder = "Ej:10110";
+    input.addEventListener('input',permitirSoloCerosUnos)
+     
 
     document.querySelector("#lblOutput").textContent = "Valor Decimal:";
   } else {
+    // binario a decimal
+    input.value = ''
+      output.value = ''
     document.querySelector("#titulo").textContent =
       "Convertir decimal a binario:";
     document.querySelector("#lblInput").textContent =
       "Ingrese el número decimal:";
 document.querySelector("#inputNumber").placeholder = "Ej:12";
     document.querySelector("#lblOutput").textContent = "Valor Binario:";
+    input.removeEventListener('input',permitirSoloCerosUnos)
+
+    
+   
   }
 });
 
 let btnReset = document.querySelector("#btnReset");
 btnReset.addEventListener("click", function () {
-  document.querySelector(".inputNumber").value = "";
   select.selectedIndex = 0;
   if (select.value === "decToBin") {
     document.querySelector("#titulo").textContent =
-      "Convertir decimal a binario:";
+    "Convertir decimal a binario:";
     document.querySelector("#lblInput").textContent =
-      "Ingrese el número decimal:";
+    "Ingrese el número decimal:";
     document.querySelector("#lblOutput").textContent = "Valor Binario:";
+    document.querySelector("#inputNumber").placeholder = "Ej:12";
   }
+    document.querySelector('#inputNumber').value = ''
+    document.querySelector('#output').value = ''
+ 
 });
 
 function decimalToBinario() {
@@ -63,3 +85,4 @@ function binarioToDecimal() {
 
   document.querySelector("#output").value = decimal;
 }
+

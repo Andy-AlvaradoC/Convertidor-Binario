@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +8,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+ 
     <form id="formConvertidor" onsubmit="return false;">
         <h1 id="titulo">Convertir decimal a binario</h1>
-        <label for="conversionTipo">De:</label>
+        <label for="conversionTipo">Tipo de Conversión:</label>
         <select id="conversionTipo" class="inputNumber">
             <option value="decToBin">Decimal a Binario</option>
             <option value="binToDec">Binario a Decimal</option>
         </select>
     
     <label id="lblInput" for="inputNumber">Ingrese el número decimal:</label>
-    <input  id="inputNumber" class="inputNumber" type="number" placeholder="Ej:12">
+    <input  id="inputNumber" class="inputNumber" type="text" placeholder="Ej:12">
     <div id="divBTN">
         <button id="btnConvertir" onclick="calcularValor()">Convertir</button>
         <button id="btnReset" >Reset</button>
@@ -28,4 +30,5 @@
 
    <script src="script.js"></script>
 </body>
+
 </html>
